@@ -6,16 +6,25 @@
     <div id="what">Culture</div>
     <div id="how">1Exchange</div>
   </h1>
-  <h2>Monthly theme...</h2>
+  <div class="dropdown">
+    <button (click)="myFunction()" class="dropbtn">Dropdown</button>
+    <div *ngIf="showDropDown === true" id="myDropdown" class="dropdown-content">
+      <a href="#">Detroit </a>
+      <a href="#">Ann Arbor</a>
+      <a href="#">Lansing</a>
+      <a href="#">Grand Rapids</a>
+      <a href="#">Dearborn</a>
+      <a href="#">Hamtramck</a>
+      <a href="#">Pontiac</a>
+      <a href="#">Saginaw</a>
+      <a href="#">Albion</a>
+      <a href="#">Flint</a>
+      <a href="#">Traverse City</a>
+      <a href="#">Sault St Marie</a>
+      <a href="#">Mackinac</a>
+    </div>
+  </div>
   <p>"Connecting with Michiganders"</p>
-
-  <h3>Cultural Cities in Michigan to Explore</h3>
-  <ul>
-    <li>Detroit</li>
-    <li>Hamtramck</li>
-    <li>Grand Rapids</li>
-    <!-- The list of Michigan cities -->
-  </ul>
 
   <!-- In above section, cities will be on home page and will hyperlink to separate component with the Google map 
     image and the "learn" database -->

@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from "../api.service";
+import { ApiService } from '../api.service';
 import { Loader, LoaderOptions } from 'google-maps';
 import { Data } from '../data';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  styleUrls: ['./main.component.css'],
 })
 export class MainComponent implements OnInit {
   location: any;
   translation: any;
   events: any;
   database: Data[];
+  showDropDown = false;
 
   constructor(private apiService: ApiService) {
     this.apiService.getDataBase().subscribe((data) => {
@@ -29,30 +30,26 @@ export class MainComponent implements OnInit {
       this.translation = data;
       console.log(this.translation);
     });
-  } 
-    
-
-    async miMap() {
-      const options: LoaderOptions = {
-      };
-      const loader = new Loader(
-        'AIzaSyDKHFCMQiqFcNERDDcHqqcHRvNqZdqCLQU',
-        options
-      );
-      
-      const google = await loader.load();
-      return new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 44.182205, lng: -84.506836 },
-        zoom: 8,
-      });
-  
   }
-  
+
+  async miMap() {
+    const options: LoaderOptions = {};
+    const loader = new Loader(
+      'AIzaSyDKHFCMQiqFcNERDDcHqqcHRvNqZdqCLQU',
+      options
+    );
+
+    const google = await loader.load();
+    return new google.maps.Map(document.getElementById('map'), {
+      center: { lat: 44.182205, lng: -84.506836 },
+      zoom: 8,
+    });
+  }
 
   ngOnInit(): void {
     this.miMap();
-
   }
-  
-
+  myFunction() {
+    this.showDropDown = !this.showDropDown;
+  }
 }
