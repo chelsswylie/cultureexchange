@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
   // Google API KEY
-googleApiKey = 'AIzaSyDKHFCMQiqFcNERDDcHqqcHRvNqZdqCLQU';
+googleApiKey = 'api_key';
 
 // Ticketmaster API KEY
 eventApiKey = 'ZL1Y7N3SNRvR8ISGiM6GE8FrbYErNAV7';
