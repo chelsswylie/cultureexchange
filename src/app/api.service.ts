@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
   // Google API_KEY
-  googleApiKey = 'AIzaSyDKHFCMQiqFcNERDDcHqqcHRvNqZdqCLQU';
+  googleApiKey = 'api_key';
 
   // Eventful API KEY
   eventApiKey = 'S7N4hXRm85fgzH7G';
